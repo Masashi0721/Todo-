@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    {% if object %}
+    <h1>ToDoの編集</h1>
+    {% else %}
+    <h1>ToDoの作成</h1>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }} 
+        <button type="submit">送信</button>
+    </form>
+    <a href="{% url 'cal:list' %}">戻る</a>
+</body>
+</html>

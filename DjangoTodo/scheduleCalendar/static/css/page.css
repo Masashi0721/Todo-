@@ -1,0 +1,10 @@
+  h1 {
+    width: 300px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 25px;
+    font-family: Monospace;
+    line-height: 2;
+  }

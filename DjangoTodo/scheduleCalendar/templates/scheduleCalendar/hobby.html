@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+</head>
+<body>
+    {% for list in object_list %}  
+        {% if list.category == "hobby" %} 
+        <table>
+            <thead>
+                <tr>
+                    <th width="100"><h1>{{ list.event_name }}</h1></th>
+                    <th><p><a href="{% url 'cal:tododelete' pk=list.pk %}">delete</a>　　　
+                        <a href="{% url 'cal:todoupdate' pk=list.pk %}">update</a></p></th>
+                </tr>
+            </thead>
+        </table>
+        {% endif %}
+    {% endfor %}
+    <a href="{% url 'cal:menu' %}">戻る</a>
+</body>
+</html>
